@@ -1,5 +1,3 @@
-_G.Main = {}
-function _G.Main:New(Title)
 	local plr = game.Players.LocalPlayer
 	if plr.PlayerGui:FindFirstChild("TestLib") then
 	    plr.PlayerGui.TestLib:Destroy()
@@ -115,4 +113,3 @@ function _G.Main:New(Title)
 
 	return _G.Frame
 	
-end
