@@ -1,0 +1,118 @@
+_G.Main = {}
+function _G.Main:New(Title)
+	local plr = game.Players.LocalPlayer
+	if plr.PlayerGui:FindFirstChild("TestLib") then
+	    plr.PlayerGui.TestLib:Destroy()
+	end
+	
+	local TestLib = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local Header = Instance.new("TextLabel")
+	local UICorner = Instance.new("UICorner")
+	local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+	local UICorner_2 = Instance.new("UICorner")
+	local Holder = Instance.new("Frame")
+	local UICorner_3 = Instance.new("UICorner")
+	local Envierment = Instance.new("ScrollingFrame")
+	local Tab1 = Instance.new("Frame")
+	local UIListLayout = Instance.new("UIListLayout")
+	local UICorner_4 = Instance.new("UICorner")
+	local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+	local UICorner_5 = Instance.new("UICorner")
+
+	TestLib.Name = "TestLib"
+	TestLib.ResetOnSpawn = false
+	TestLib.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+	Main.Name = "Main"
+	Main.Parent = TestLib
+	Main.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	Main.Position = UDim2.new(0.0796723738, 0, 0.342352927, 0)
+	Main.Size = UDim2.new(0, 353, 0, 267)
+	Main.Active = true
+	Main.Draggable = true
+
+	Header.Name = "Header"
+	Header.Parent = Main
+	Header.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	Header.BorderSizePixel = 0
+	Header.Size = UDim2.new(0, 353, 0, 39)
+	Header.Font = Enum.Font.SourceSansSemibold
+	Header.Text = Title
+	Header.TextColor3 = Color3.fromRGB(159, 159, 159)
+	Header.TextSize = 26.000
+
+	UICorner.Parent = Header
+
+	UITextSizeConstraint.Parent = Header
+	UITextSizeConstraint.MaxTextSize = 26
+
+	UICorner_2.Parent = Main
+
+	Holder.Name = "Holder"
+	Holder.Parent = Main
+	Holder.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	Holder.Position = UDim2.new(0.0594900846, 0, 0.202247187, 0)
+	Holder.Size = UDim2.new(0, 310, 0, 194)
+
+	UICorner_3.Parent = Holder
+
+	Envierment.Name = "Envierment"
+	Envierment.Parent = Holder
+	Envierment.Active = true
+	Envierment.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Envierment.BackgroundTransparency = 1.000
+	Envierment.BorderSizePixel = 0
+	Envierment.Position = UDim2.new(0.0354838707, 0, 0.0567010306, 0)
+	Envierment.Size = UDim2.new(0, 286, 0, 171)
+	Envierment.CanvasSize = UDim2.new(0, 0, 0, 0)
+	Envierment.ScrollBarThickness = 0
+
+	Tab1.Name = "Tab1"
+	Tab1.Parent = Envierment
+	Tab1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Tab1.BackgroundTransparency = 1.000
+	Tab1.Position = UDim2.new(0, 0, 0.0127810948, 0)
+	Tab1.Size = UDim2.new(0, 286, 0, 166)
+
+	UIListLayout.Parent = Tab1
+	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout.Padding = UDim.new(0, 7)
+	
+	
+	_G.Frame = {}
+	function _G.Frame:Button(Name,Call)
+		local Button = Instance.new("TextButton")
+		Button.Name = "Button"
+		Button.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+		Button.Position = UDim2.new(0.122377619, 0, 0, 0)
+		Button.Size = UDim2.new(0, 264, 0, 39)
+		Button.AutoButtonColor = false
+		Button.Font = Enum.Font.SourceSans
+		Button.TextColor3 = Color3.fromRGB(159, 159, 159)
+		Button.TextScaled = true
+		Button.Text = Name
+		Button.TextSize = 14.000
+		Button.TextWrapped = true
+		Button.Parent = Tab1
+		
+		local UICorner_6 = Instance.new("UICorner")
+		UICorner_6.Parent = Button
+		
+		local UITextSizeConstraint_3 = Instance.new("UITextSizeConstraint")
+		UITextSizeConstraint_3.Parent = Button
+		UITextSizeConstraint_3.MaxTextSize = 30
+
+		
+		Button.MouseButton1Down:Connect(function()
+			pcall(Call)
+		end)
+		
+		
+		
+	end
+
+	return _G.Frame
+	
+end
